@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Montesarret";
+  src: url("../Fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+  font-family: "Montesarret";
+}
+
+label {
+  font-size: 1.1rem !important;
+}
+
+input[type="text"] {
+  padding-left: 12px;
+  border: none;
+}
+
+.dropdown,
+input {
+  font-weight: 800;
+  border: none !important;
+}
+
+.btn {
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  margin-bottom: 0 !important;
+}

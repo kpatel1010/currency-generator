@@ -1,0 +1,13 @@
+.result-box {
+  background-color: rgba(255, 255, 255, 0.344);
+  font-weight: 6 00;
+}
+
+@font-face {
+  font-family: "Montesarret";
+  src: url("../Fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+  font-family: "Montesarret";
+}
