@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/currency-converter/static/css/main.41eabd12.css",
-    "main.js": "/currency-converter/static/js/main.ebf692e4.js",
-    "static/js/787.440ba904.chunk.js": "/currency-converter/static/js/787.440ba904.chunk.js",
-    "static/media/Montserrat-VariableFont_wght.ttf": "/currency-converter/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
-    "static/media/RussoOne-Regular.ttf": "/currency-converter/static/media/RussoOne-Regular.b2f5b287ccb8fd446eae.ttf",
-    "index.html": "/currency-converter/index.html",
-    "main.41eabd12.css.map": "/currency-converter/static/css/main.41eabd12.css.map",
-    "main.ebf692e4.js.map": "/currency-converter/static/js/main.ebf692e4.js.map",
-    "787.440ba904.chunk.js.map": "/currency-converter/static/js/787.440ba904.chunk.js.map"
+    "main.css": "/currency-generator/static/css/main.85038b6b.css",
+    "main.js": "/currency-generator/static/js/main.c770845c.js",
+    "static/js/787.440ba904.chunk.js": "/currency-generator/static/js/787.440ba904.chunk.js",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/currency-generator/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
+    "static/media/RussoOne-Regular.ttf": "/currency-generator/static/media/RussoOne-Regular.b2f5b287ccb8fd446eae.ttf",
+    "index.html": "/currency-generator/index.html",
+    "main.85038b6b.css.map": "/currency-generator/static/css/main.85038b6b.css.map",
+    "main.c770845c.js.map": "/currency-generator/static/js/main.c770845c.js.map",
+    "787.440ba904.chunk.js.map": "/currency-generator/static/js/787.440ba904.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.41eabd12.css",
-    "static/js/main.ebf692e4.js"
+    "static/css/main.85038b6b.css",
+    "static/js/main.c770845c.js"
   ]
 }
