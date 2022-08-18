@@ -71,7 +71,7 @@ function ConvertorFrom({
         </fieldset>
         <div className="flex items-center justify-center">
           <input
-            className="pa3  bg-white pointer dib w-40 mv4 btn grow"
+            className="pa3  bg-white pointer dib w-50 mv4 btn grow"
             type="submit"
             value="Convert"
             disabled={amount !== "" && isAmountValid ? false : true}

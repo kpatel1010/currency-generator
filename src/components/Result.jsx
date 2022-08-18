@@ -9,7 +9,7 @@ function Results({ result }) {
     : "Please Enter Amount to do Conversion";
 
   return (
-    <div className="flex items-center mv5 justify-center pa3 navy br4 result-box">
+    <div className="flex items-center  justify-center pa3 navy br4 result-box">
       <span
         className="lh-title ml3 f3 ma3 white"
         style={{ textAlign: "center" }}

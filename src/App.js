@@ -72,9 +72,10 @@ class App extends Component {
             minWidth: "370px",
             maxWidth: "650px",
             zIndex: "2",
+            overflow: "scroll",
           }}
         >
-          <h1 className="f1 mv5 set-font">Curreny Converter</h1>
+          <h1 className="f1 set-font tc">Curreny Converter</h1>
           <ConvertorFrom
             {...all}
             onChange={this.handleInputChange}
