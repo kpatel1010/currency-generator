@@ -6,8 +6,24 @@
     #c850c0 46%,
     #ffcc70 100%
   );
+  min-width: 370px;
+  height: 100vh;
+  max-width: 750px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: scroll;
 }
 
+.view-change-btn {
+  width: 25%;
+  font-size: 1rem !important;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px !important;
+}
 @font-face {
   font-family: "Russo One";
   src: url("./Fonts/RussoOne-Regular.ttf");
@@ -16,4 +32,6 @@
 .set-font {
   font-family: "Russo One";
   font-weight: 500;
+  margin-top: 3rem;
+  margin-bottom: -1rem;
 }

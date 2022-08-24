@@ -1,91 +1,36 @@
-import React, { Component } from "react";
-import axios from "axios";
-import ConvertorFrom from "./components/convertorFrom";
-import Results from "./components/Result";
-import Particle from "./components/Particle";
+import React, { useState } from "react";
+import Currency from "./components/currency/Currency";
+import Unit from "./components/unit/Unit";
 import "./App.css";
+import Radium, { StyleRoot } from "radium";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      amount: "",
-      isAmountValid: true,
-      from: "USD",
-      to: "INR",
-      currency: [],
-      result: {},
-    };
-  }
-
-  componentDidMount() {
-    axios
-      .get("https://openexchangerates.org/api/currencies.json")
-      .then((resp) => resp.data)
-      .then((data) => this.setState({ currency: Object.entries(data) }));
-  }
-
-  handleInputChange = (event) => {
-    const duplicateState = this.state;
-    const { name, value } = event.currentTarget;
-    duplicateState[name] = value;
-    this.setState({ duplicateState });
-
-    if (isNaN(Number(this.state.amount))) {
-      this.setState({ isAmountValid: false });
-    } else {
-      this.setState({ isAmountValid: true });
-    }
+function App() {
+  const [isUnitOn, setIsUnitOn] = useState(false);
+  const onViewChange = () => {
+    setIsUnitOn((prevVal) => !prevVal);
   };
 
-  handleOnSubmit = (event) => {
-    event.preventDefault();
-    const { to, from, amount } = this.state;
-    let config = {
-      headers: {
-        apikey: "AKnAbPi7BI7snwvgT0zyzks2tYgXp9O2",
-      },
-    };
-    axios
-      .get(
-        `https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`,
-        config
-      )
-      .then((resp) => resp.data)
-      .then((data) => {
-        if (data.success) {
-          this.setState({ result: data });
-        }
-      })
-      .catch((err) => this.setState({ result: {} }));
+  const style = {
+    // Adding media query..
+    "@media (min-width: 768px)": {
+      maxHeight: "600px",
+    },
   };
-
-  render() {
-    const { ...all } = this.state;
-    return (
-      <>
-        <Particle />
-        <div
-          className="flex items-center justify-around flex-column pa3 br3 w-90 App"
-          style={{
-            height: "90vh",
-            minWidth: "370px",
-            maxWidth: "650px",
-            zIndex: "2",
-            overflow: "scroll",
-          }}
+  return (
+    <StyleRoot>
+      <div
+        className="flex items-center justify-around flex-column pa3 br3 w-100 App"
+        style={style}
+      >
+        <button
+          className="pa3 bg-white pointer dib btn grow view-change-btn"
+          onClick={onViewChange}
         >
-          <h1 className="f1 set-font tc">Curreny Converter</h1>
-          <ConvertorFrom
-            {...all}
-            onChange={this.handleInputChange}
-            onSubmit={this.handleOnSubmit}
-          />
-          <Results result={this.state.result} />
-        </div>
-      </>
-    );
-  }
+          {!isUnitOn ? "Unit Convertor" : "Currency Convertor"}
+        </button>
+        {isUnitOn ? <Unit /> : <Currency />}
+      </div>
+    </StyleRoot>
+  );
 }
-
 export default App;

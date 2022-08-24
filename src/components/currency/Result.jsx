@@ -1,12 +1,12 @@
 import React from "react";
 import "./Result.css";
 
-function Results({ result }) {
+function Results({ result, defaultMsg }) {
   let message = Object.keys(result).length
     ? `${Number.parseFloat(result.query.amount).toFixed(2)} ${
         result.query.from
       } = ${Number.parseFloat(result.result).toFixed(2)} ${result.query.to}`
-    : "Please Enter Amount to do Conversion";
+    : defaultMsg;
 
   return (
     <div className="flex items-center  justify-center pa3 navy br4 result-box">

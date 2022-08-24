@@ -1,0 +1,43 @@
+export const units = {
+  length: [
+    ["mm", "Millimeter"],
+    ["cm", "Centimeter"],
+    ["m", "Meter"],
+    ["in", "Inch"],
+    ["ft", "Foot"],
+    ["mi", "Mile"],
+  ],
+  area: [
+    ["mm2", "Square Millimeter"],
+    ["cm2", "Square Centimeter"],
+    ["m2", "Square Meter"],
+    ["in2", "Square Inch"],
+    ["ft2", "Square Foot"],
+    ["mi2", "Square Mile"],
+  ],
+  temperature: [
+    ["C", "Celsius"],
+    ["F", "Farenhite"],
+    ["K", "Kelvin"],
+    ["R", "Rakine Scale"],
+  ],
+  mass: [
+    ["mcg", "Microgram"],
+    ["mg", "Milligram"],
+    ["g", "Gram"],
+    ["kg", "Kilogram"],
+    ["oz", "Ounce"],
+    ["lb", "Pound"],
+  ],
+  time: [
+    ["ns", "NanoSecond"],
+    ["ms", "Millisecond"],
+    ["s", "Second"],
+    ["min", "Minute"],
+    ["h", "Hour"],
+    ["d", "Day"],
+    ["week", "Week"],
+    ["month", "Month"],
+    ["year", "Year"],
+  ],
+};
