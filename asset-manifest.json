@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/currency-generator/static/css/main.a6e624a6.css",
-    "main.js": "/currency-generator/static/js/main.513620fc.js",
+    "main.css": "/currency-generator/static/css/main.d86ef9e6.css",
+    "main.js": "/currency-generator/static/js/main.baf607b3.js",
     "static/js/787.440ba904.chunk.js": "/currency-generator/static/js/787.440ba904.chunk.js",
     "static/media/Montserrat-VariableFont_wght.ttf": "/currency-generator/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
     "static/media/RussoOne-Regular.ttf": "/currency-generator/static/media/RussoOne-Regular.b2f5b287ccb8fd446eae.ttf",
     "index.html": "/currency-generator/index.html",
-    "main.a6e624a6.css.map": "/currency-generator/static/css/main.a6e624a6.css.map",
-    "main.513620fc.js.map": "/currency-generator/static/js/main.513620fc.js.map",
+    "main.d86ef9e6.css.map": "/currency-generator/static/css/main.d86ef9e6.css.map",
+    "main.baf607b3.js.map": "/currency-generator/static/js/main.baf607b3.js.map",
     "787.440ba904.chunk.js.map": "/currency-generator/static/js/787.440ba904.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6e624a6.css",
-    "static/js/main.513620fc.js"
+    "static/css/main.d86ef9e6.css",
+    "static/js/main.baf607b3.js"
   ]
 }
