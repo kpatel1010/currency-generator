@@ -11,6 +11,8 @@ function ConvertorFrom({
   onSubmit,
   isAmountValid,
   inputLabel,
+  onViewChange,
+  isUnitOn,
 }) {
   const style = {
     // Adding media query..
@@ -32,7 +34,7 @@ function ConvertorFrom({
   }
 
   return (
-    <main className="pa2  w-90 mv-5">
+    <main className="pa2 w-90 margin">
       <form className="measure center" onSubmit={onSubmit}>
         <fieldset id="convert" className="ba b--transparent ph0 mh0">
           <div className="mt3">
@@ -84,13 +86,19 @@ function ConvertorFrom({
             </div>
           </StyleRoot>
         </fieldset>
-        <div className="flex items-center justify-center">
+        <div className="btn-container">
           <input
-            className="pa3 bg-white pointer dib w-50 mv3 btn grow"
+            className="pa3 bg-white pointer dib w-70 mv3 btn grow"
             type="submit"
             value="Convert"
             disabled={amount !== "" && isAmountValid ? false : true}
           />
+          <button
+            className="pa3 bg-white pointer dib btn grow w-70"
+            onClick={onViewChange}
+          >
+            {!isUnitOn ? "Unit Convertor" : "Currency Convertor"}
+          </button>
         </div>
       </form>
     </main>

@@ -3,8 +3,9 @@ import { units } from "../../services/unitService";
 import convert from "convert-units";
 import ConvertorFrom from "../convertorFrom";
 import Results from "../currency/Result";
+import { StyleRoot } from "radium";
 
-function Unit() {
+function Unit({ onViewChange, isUnitOn }) {
   const [unitType, setUnitType] = useState("length");
   const [slectedType, setSelectedType] = useState([]);
   const [from, setFrom] = useState("");
@@ -12,6 +13,7 @@ function Unit() {
   const [amount, setAmount] = useState("");
   const [isAmountValid, setIsAmountValid] = useState(true);
   const [result, setResult] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setSelectedType(units[unitType]);
@@ -42,6 +44,7 @@ function Unit() {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const output = convert(amount).from(from).to(to);
     setResult({
       result: output,
@@ -51,11 +54,18 @@ function Unit() {
         to: to,
       },
     });
+    setIsLoading(false);
   };
-  console.log(result);
+
+  const style = {
+    // Adding media query..
+    "@media (min-width: 768px)": {
+      marginTop: "10rem",
+    },
+  };
   return (
     <>
-      <h2 className="f1 set-font tc">Unit Converter</h2>
+      <h2 className="f1 set-font tc setUnitMargin">Unit Converter</h2>
       <main className="pa2  w-90 mv-4">
         <form className="measure center" style={{ marginBottom: "-2.4rem" }}>
           <fieldset id="convert" className="ba b--transparent ph0 mh0">
@@ -88,6 +98,8 @@ function Unit() {
         onSubmit={handleOnSubmit}
         isAmountValid={isAmountValid}
         inputLabel={"Value"}
+        onViewChange={onViewChange}
+        isUnitOn={isUnitOn}
       />
       <Results
         result={result}

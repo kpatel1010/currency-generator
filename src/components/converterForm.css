@@ -26,3 +26,15 @@ input {
   border-radius: 15px;
   margin-bottom: 0 !important;
 }
+
+.margin {
+  margin-top: 2rem;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}

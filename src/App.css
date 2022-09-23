@@ -16,13 +16,8 @@
   overflow: scroll;
 }
 
-.view-change-btn {
-  width: 25%;
-  font-size: 1rem !important;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 10px !important;
+.container {
+  width: 400px !important;
 }
 @font-face {
   font-family: "Russo One";
@@ -35,3 +30,18 @@
   margin-top: 3rem;
   margin-bottom: -1rem;
 }
+
+@media (max-width: 920px) and (max-height: 420px) {
+  .setUnitMargin {
+    margin: 18rem 0 2rem 0;
+  }
+  .setCurrencyMargin {
+    margin: 16rem 0 1rem 0;
+  }
+}
+
+/* @media (max-width: 600px) and (max-height: 350px) {
+  .setUnitMargin {
+    margin: 0;
+  }
+} */

@@ -3,9 +3,10 @@ import axios from "axios";
 import ConvertorFrom from "../convertorFrom";
 import Results from "./Result";
 import "../../App.css";
+import LoadingSpinner from "../loader";
 
 class Currency extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       amount: "",
@@ -14,6 +15,7 @@ class Currency extends Component {
       to: "INR",
       dropdownArr: [],
       result: {},
+      isLoading: false,
     };
   }
 
@@ -39,6 +41,7 @@ class Currency extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
+    this.setState({ isLoading: true });
     const { to, from, amount } = this.state;
     let config = {
       headers: {
@@ -52,6 +55,8 @@ class Currency extends Component {
       )
       .then((resp) => resp.data)
       .then((data) => {
+        this.setState({ isLoading: false });
+
         if (data.success) {
           this.setState({ result: data });
         }
@@ -61,18 +66,25 @@ class Currency extends Component {
 
   render() {
     const { ...all } = this.state;
+    const { onViewChange, isUnitOn } = this.props;
     return (
       <>
-        <h1 className="f1 set-font tc">Curreny Converter</h1>
+        <h1 className="f1 set-font tc setCurrencyMargin">Curreny Converter</h1>
         <ConvertorFrom
           {...all}
           onChange={this.handleInputChange}
           onSubmit={this.handleOnSubmit}
+          onViewChange={onViewChange}
+          isUnitOn={isUnitOn}
         />
-        <Results
-          result={this.state.result}
-          defaultMsg={"Please Enter Amount to do Conversion"}
-        />
+        {this.state.isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <Results
+            result={this.state.result}
+            defaultMsg={"Please Enter Amount to do Conversion"}
+          />
+        )}
       </>
     );
   }

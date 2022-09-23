@@ -12,8 +12,8 @@ function App() {
 
   const style = {
     // Adding media query..
-    "@media (min-width: 768px)": {
-      maxHeight: "600px",
+    "@media (min-width: 600px)": {
+      maxHeight: "700px",
     },
   };
   return (
@@ -22,13 +22,11 @@ function App() {
         className="flex items-center justify-around flex-column pa3 br3 w-100 App"
         style={style}
       >
-        <button
-          className="pa3 bg-white pointer dib btn grow view-change-btn"
-          onClick={onViewChange}
-        >
-          {!isUnitOn ? "Unit Convertor" : "Currency Convertor"}
-        </button>
-        {isUnitOn ? <Unit /> : <Currency />}
+        {isUnitOn ? (
+          <Unit onViewChange={onViewChange} isUnitOn={isUnitOn} />
+        ) : (
+          <Currency onViewChange={onViewChange} isUnitOn={isUnitOn} />
+        )}
       </div>
     </StyleRoot>
   );
